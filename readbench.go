@@ -35,6 +35,10 @@ type ReadEnv struct {
 	startTime, lastTime time.Duration
 	read, lastRead      uint64
 	lastPercent         int
+	lastReadPercent     int
+
+	written, lastWritten uint64
+	lastWrittenPercent   int
 }
 
 func NewReadEnv(log io.Writer, kr io.Reader, kw io.Writer, resetKey func(), cfg ReadConfig) *ReadEnv {
@@ -96,6 +100,7 @@ func (env *ReadEnv) Run(write func(key, value string, lastCall bool) error, read
 				env.keych <- keypool
 				keypool = make([][]byte, 0)
 			}
+			env.logWritePercentage()
 		}
 		if err != nil {
 			return err
@@ -194,8 +199,20 @@ func (env *ReadEnv) logPercentage() {
 		return
 	}
 	pct := int((float64(env.read) / float64(env.cfg.Size)) * 100)
-	if pct > env.lastPercent {
-		fmt.Printf("%3d%%  %s\n", pct, env.cfg.TestName)
-		env.lastPercent = pct
+	if pct > env.lastReadPercent {
+		fmt.Printf("[Reading] %3d%%  %s\n", pct, env.cfg.TestName)
+		env.lastReadPercent = pct
+	}
+}
+
+func (env *ReadEnv) logWritePercentage() {
+	if !env.cfg.LogPercent {
+		return
+	}
+	pct := int((float64(env.written) / float64(env.cfg.Size)) * 100)
+	if pct > env.lastWrittenPercent {
+		fmt.Printf("[Writing] %3d%%  %s\n", pct, env.cfg.TestName)
+		env.lastWrittenPercent = pct
+>>>>>>> cf5d1f9 (all: add readbench)
 	}
 }

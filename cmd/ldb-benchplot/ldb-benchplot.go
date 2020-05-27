@@ -67,7 +67,7 @@ func reduceEvents(events []bench.Progress, n int) []bench.Progress {
 func plotBPS(plt *plot.Plot, reports []bench.Report) {
 	plt.X.Tick.Marker = megabyteTicks{unit: "mb"}
 	plt.X.Label.Text = "database size"
-	plt.Y.Label.Text = "write speed"
+	plt.Y.Label.Text = "speed"
 	plt.Y.Tick.Marker = megabyteTicks{unit: "mb/s"}
 	plt.Legend.Top = true
 	addPlots(plt, reports, toBPSPlot)
@@ -76,7 +76,7 @@ func plotBPS(plt *plot.Plot, reports []bench.Report) {
 // plotAbsTime adds time/size plots for all reports.
 func plotAbsTime(plt *plot.Plot, reports []bench.Report) {
 	plt.X.Label.Text = "time (s)"
-	plt.Y.Label.Text = "database size"
+	plt.Y.Label.Text = "processed size"
 	plt.Y.Tick.Marker = megabyteTicks{unit: "mb"}
 	addPlots(plt, reports, toAbsTimePlot)
 }
@@ -100,7 +100,7 @@ func addPlots(plt *plot.Plot, reports []bench.Report, toXY xyFunc) {
 	}
 }
 
-// bpsPlot plots X = db size against Y = bytes per second written.
+// bpsPlot plots X = db size against Y = bytes per second processed
 type bpsPlot []bench.Progress
 
 func toBPSPlot(events []bench.Progress) plotter.XYer {
