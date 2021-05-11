@@ -141,7 +141,7 @@ func (env *ReadEnv) writeKey(wg *sync.WaitGroup) {
 func (env *ReadEnv) readKey(result chan [][]byte, shutdown chan struct{}, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	var buffer = make([]byte, env.cfg.KeySize*1024)
+	buffer := make([]byte, env.cfg.KeySize*1024)
 	if env.resetKey != nil {
 		env.resetKey()
 	}
@@ -151,7 +151,7 @@ func (env *ReadEnv) readKey(result chan [][]byte, shutdown chan struct{}, wg *sy
 			close(result)
 			return
 		}
-		var batchKey = make([][]byte, read/int(env.cfg.KeySize))
+		batchKey := make([][]byte, read/int(env.cfg.KeySize))
 		for i := 0; i+int(env.cfg.KeySize) <= read; i += int(env.cfg.KeySize) {
 			batchKey[i/int(env.cfg.KeySize)] = copyBytes(buffer[i : i+int(env.cfg.KeySize)])
 		}

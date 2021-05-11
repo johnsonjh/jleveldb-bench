@@ -7,7 +7,7 @@ import (
 	"math"
 	"time"
 
-	bench "github.com/fjl/goleveldb-bench"
+	bench "github.com/johnsonjh/jleveldb-bench"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
 	"gonum.org/v1/plot/plotutil"
@@ -26,10 +26,7 @@ func main() {
 		log.Fatal("-out is required")
 	}
 	reports := bench.MustReadReports(flag.Args())
-	plt, err := plot.New()
-	if err != nil {
-		log.Fatal(err)
-	}
+	plt := plot.New()
 	switch *plotType {
 	case "bps":
 		plotBPS(plt, reports)

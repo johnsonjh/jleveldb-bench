@@ -16,8 +16,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/syndtr/goleveldb/leveldb"
-	"github.com/syndtr/goleveldb/leveldb/opt"
+	"github.com/johnsonjh/jleveldb/leveldb"
+	"github.com/johnsonjh/jleveldb/leveldb/opt"
 )
 
 func main() {

@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	bench "github.com/fjl/goleveldb-bench"
-	"github.com/syndtr/goleveldb/leveldb"
-	"github.com/syndtr/goleveldb/leveldb/filter"
-	"github.com/syndtr/goleveldb/leveldb/opt"
+	bench "github.com/johnsonjh/jleveldb-bench"
+	"github.com/johnsonjh/jleveldb/leveldb"
+	"github.com/johnsonjh/jleveldb/leveldb/filter"
+	"github.com/johnsonjh/jleveldb/leveldb/opt"
 )
 
 func main() {
@@ -52,7 +52,7 @@ func main() {
 	}
 	cfg.LogPercent = true
 
-	if err := os.MkdirAll(*logdirflag, 0755); err != nil {
+	if err := os.MkdirAll(*logdirflag, 0o755); err != nil {
 		log.Fatal("can't create log dir: %v", err)
 	}
 
@@ -73,7 +73,7 @@ func main() {
 		} else {
 			dbdir, createdb = filepath.Join(*dirflag, "testdb-"+name), true
 		}
-		if err := os.MkdirAll(dbdir, 0755); err != nil {
+		if err := os.MkdirAll(dbdir, 0o755); err != nil {
 			log.Fatal("can't create keyfile dir: %v", err)
 		}
 		if err := runTest(*logdirflag, dbdir, name, createdb, cfg); err != nil {
