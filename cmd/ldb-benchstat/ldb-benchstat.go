@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	bench "github.com/fjl/goleveldb-bench"
 	"github.com/gonum/stat"
+	bench "github.com/johnsonjh/jleveldb-bench"
 )
 
 func main() {

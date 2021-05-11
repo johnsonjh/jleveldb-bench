@@ -9,9 +9,9 @@ import (
 	"sort"
 	"strings"
 
-	bench "github.com/fjl/goleveldb-bench"
-	"github.com/syndtr/goleveldb/leveldb"
-	"github.com/syndtr/goleveldb/leveldb/opt"
+	bench "github.com/johnsonjh/jleveldb-bench"
+	"github.com/johnsonjh/jleveldb/leveldb"
+	"github.com/johnsonjh/jleveldb/leveldb/opt"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -52,7 +52,7 @@ func main() {
 	}
 	cfg.LogPercent = true
 
-	if err := os.MkdirAll(*logdirflag, 0755); err != nil {
+	if err := os.MkdirAll(*logdirflag, 0o755); err != nil {
 		log.Fatal("can't create log dir: %v", err)
 	}
 
