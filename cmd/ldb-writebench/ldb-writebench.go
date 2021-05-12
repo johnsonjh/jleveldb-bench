@@ -58,7 +58,7 @@ func main() {
 
 	anyErr := false
 	for _, name := range run {
-		dbdir := filepath.Join(*dirflag, "testdb-"+name)
+		dbdir := filepath.Join(*dirflag, "jtestdb-"+name)
 		if err := runTest(*logdirflag, dbdir, name, cfg); err != nil {
 			log.Printf("test %q failed: %v", name, err)
 			anyErr = true

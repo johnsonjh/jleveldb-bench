@@ -67,7 +67,7 @@ func runTest(basedir, name string, avgwait time.Duration) error {
 	if err != nil {
 		log.Fatalf("can't figure out executable path: %v", err)
 	}
-	dbdir := filepath.Join(basedir, "testdb-crashtest-"+name)
+	dbdir := filepath.Join(basedir, "jtestdb-crashtest-"+name)
 	if err := os.RemoveAll(dbdir); err != nil && !os.IsNotExist(err) {
 		return err
 	}

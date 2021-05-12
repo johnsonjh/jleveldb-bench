@@ -59,14 +59,14 @@ func main() {
 	anyErr := false
 	for _, name := range run {
 		var dbdir string
-		if strings.Contains(*dirflag, "testdb-") {
+		if strings.Contains(*dirflag, "jtestdb-") {
 			if hasFilter(*dirflag) != hasFilter(name) {
 				log.Printf("Skip test %s. Incompatible database", name)
 				continue
 			}
 			dbdir = *dirflag // The dirflag points to an existent database, reuse it.
 		} else {
-			dbdir = filepath.Join(*dirflag, "testdb-"+name)
+			dbdir = filepath.Join(*dirflag, "jtestdb-"+name)
 		}
 		if err := os.MkdirAll(dbdir, 0o755); err != nil {
 			log.Fatal("can't create log dir: %v", err)

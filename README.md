@@ -1,22 +1,24 @@
 # jleveldb-bench
 
-jleveldb-bench tests the performance of a jleveldb/goleveldb database.
+* `jleveldb-bench` tests `jleveldb` (`goleveldb`) database performance.
 
 ## Installation
 
-    go install -v ./...
+* `go install -v ./...`
 
 ## Operation
 
 * Run with `ldb-writebench`:
 
-    mkdir datasets/mymachine-10gb
-    ldb-writebench -size 10gb -logdir datasets/mymachine-10gb -test nobatch,batch-100kb
+  * `mkdir datasets/mymachine-10gb`
+  * `ldb-writebench -size 10gb -logdir datasets/mymachine-10gb -test nobatch,batch-100kb`
 
 * Plot the result with `ldb-benchplot`:
 
-    ldb-benchplot -out 10gb.svg datasets/mymachine-10gb/*.json
+  * `ldb-benchplot -out 10gb.svg datasets/mymachine-10gb/*.json`
 
-* Databases are left on disk for inspection. You can remove them using
+* Databases are left on disk for inspection. You can remove using:
 
-    rm -r testdb-*
+  * `rm -r jtestdb-*`
+
+
