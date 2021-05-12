@@ -1,6 +1,6 @@
 # jleveldb-bench
 
-* `jleveldb-bench` tests `jleveldb` (`goleveldb`) database performance.
+`jleveldb-bench` tests `jleveldb` performance.
 
 ## Installation
 
@@ -17,8 +17,6 @@
 
   * `ldb-benchplot -out 10gb.svg datasets/mymachine-10gb/*.json`
 
-* Databases are left on disk for inspection. You can remove using:
+* Databases are left on disk for inspection. You can remove them using:
 
   * `rm -r jtestdb-*`
-
-
