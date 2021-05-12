@@ -34,7 +34,7 @@ type ReadEnv struct {
 	mu                  sync.Mutex
 	startTime, lastTime time.Duration
 	read, lastRead      uint64
-	lastReadPercent     int
+	lastPercent         int
 
 	written, lastWritten uint64
 	lastWrittenPercent   int
@@ -61,10 +61,11 @@ func (env *ReadEnv) Run(write func(key, value string, lastCall bool) error, read
 
 	var (
 		err      error
+		written  = uint64(0)
 		keypool  [][]byte
 		wg       sync.WaitGroup
-		shutdown = make(chan struct{})
 		result   = make(chan [][]byte, 100)
+		shutdown = make(chan struct{})
 	)
 	defer func() {
 		close(shutdown)
@@ -74,7 +75,7 @@ func (env *ReadEnv) Run(write func(key, value string, lastCall bool) error, read
 	// Stage one, construct the test dataset
 	if env.kw != nil {
 		wg.Add(1)
-		go env.writeKey(&wg)
+		go env.writeKey(shutdown, &wg)
 	stageOne:
 		for {
 			env.rand.Read(env.key)
@@ -89,8 +90,8 @@ func (env *ReadEnv) Run(write func(key, value string, lastCall bool) error, read
 				}
 				if len(keypool) > 0 {
 					env.keych <- keypool
+					keypool = make([][]byte, 0)
 				}
-				close(env.keych)
 				break stageOne
 			}
 			keypool = append(keypool, copyBytes(env.key))
@@ -124,16 +125,18 @@ stageTwo:
 	return nil
 }
 
-func (env *ReadEnv) writeKey(wg *sync.WaitGroup) {
+func (env *ReadEnv) writeKey(shutdown chan struct{}, wg *sync.WaitGroup) {
 	defer wg.Done()
-
-	for batchKeys := range env.keych {
-		var buffer []byte
-		for _, key := range batchKeys {
-			buffer = append(buffer, key...)
-		}
-		if _, err := env.kw.Write(buffer); err != nil {
-			panic(fmt.Sprintf("failed to write keys %v", err))
+	for {
+		select {
+		case batchKeys := <-env.keych:
+			var buffer []byte
+			for _, key := range batchKeys {
+				buffer = append(buffer, key...)
+			}
+			env.kw.Write(buffer)
+		case <-shutdown:
+			return
 		}
 	}
 }
@@ -184,13 +187,13 @@ func (env *ReadEnv) Progress(w int) {
 	if dw > 0 && dw > emitInterval {
 		p := Progress{Processed: env.read, Delta: dw, Duration: d}
 		env.log.Encode(&p)
-		env.logReadPercentage()
+		env.logPercentage()
 		env.lastTime = now
 		env.lastRead = env.read
 	}
 }
 
-func (env *ReadEnv) logReadPercentage() {
+func (env *ReadEnv) logPercentage() {
 	if !env.cfg.LogPercent {
 		return
 	}

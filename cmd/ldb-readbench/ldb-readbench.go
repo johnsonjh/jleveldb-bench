@@ -58,25 +58,20 @@ func main() {
 
 	anyErr := false
 	for _, name := range run {
-		var (
-			dbdir    string
-			createdb bool
-		)
-		// The given dir points to an existent directory, assume it's
-		// a old database for read testing.
-		if isDir(*dirflag) && fileExist(filepath.Join(*dirflag, "testing.key")) {
-			if strings.Contains(*dirflag, "filter") != strings.Contains(name, "filter") {
+		var dbdir string
+		if strings.Contains(*dirflag, "testdb-") {
+			if hasFilter(*dirflag) != hasFilter(name) {
 				log.Printf("Skip test %s. Incompatible database", name)
 				continue
 			}
-			dbdir = *dirflag
+			dbdir = *dirflag // The dirflag points to an existent database, reuse it.
 		} else {
-			dbdir, createdb = filepath.Join(*dirflag, "testdb-"+name), true
+			dbdir = filepath.Join(*dirflag, "testdb-"+name)
 		}
-		if err := os.MkdirAll(dbdir, 0o755); err != nil {
-			log.Fatal("can't create keyfile dir: %v", err)
+		if err := os.MkdirAll(dbdir, 0755); err != nil {
+			log.Fatal("can't create log dir: %v", err)
 		}
-		if err := runTest(*logdirflag, dbdir, name, createdb, cfg); err != nil {
+		if err := runTest(*logdirflag, dbdir, name, cfg); err != nil {
 			log.Printf("test %q failed: %v", name, err)
 			anyErr = true
 		}
@@ -89,7 +84,7 @@ func main() {
 	}
 }
 
-func runTest(logdir, dbdir, name string, createdb bool, cfg bench.ReadConfig) error {
+func runTest(logdir, dbdir, name string, cfg bench.ReadConfig) error {
 	cfg.TestName = name
 	logfile, err := os.Create(filepath.Join(logdir, name+time.Now().Format(".2006-01-02-15:04:05")+".json"))
 	if err != nil {
@@ -101,9 +96,9 @@ func runTest(logdir, dbdir, name string, createdb bool, cfg bench.ReadConfig) er
 		kw    io.Writer
 		kr    io.Reader
 		reset func()
-		kfile = filepath.Join(dbdir, "testing.key")
 	)
-	if !createdb {
+	kfile := filepath.Join(dbdir, "testing.key")
+	if fileExist(kfile) {
 		keyfile, err := os.Open(kfile)
 		if err != nil {
 			return err
@@ -186,10 +181,6 @@ func fileExist(path string) bool {
 	return !info.IsDir()
 }
 
-func isDir(name string) bool {
-	f, err := os.Stat(name)
-	if err != nil {
-		return false
-	}
-	return f.Mode().IsDir()
+func hasFilter(name string) bool {
+	return strings.Contains(name, "filter")
 }
