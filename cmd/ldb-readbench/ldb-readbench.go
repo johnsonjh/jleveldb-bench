@@ -132,11 +132,11 @@ var tests = map[string]Benchmarker{
 		Filter: filter.NewBloomFilter(10),
 	}},
 	"random-read-bigcache": randomRead{Options: opt.Options{
-		BlockCacheCapacity:     100 * opt.MiB,
+		BlockCacheCapacity: 100 * opt.MiB,
 	}},
 	"random-read-bigcache-filter": randomRead{Options: opt.Options{
-		BlockCacheCapacity:     100 * opt.MiB,
-		Filter:                 filter.NewBloomFilter(10),
+		BlockCacheCapacity: 100 * opt.MiB,
+		Filter:             filter.NewBloomFilter(10),
 	}},
 	"random-read-bigcache-filter-no-seekcomp": randomRead{Options: opt.Options{
 		BlockCacheCapacity:     100 * opt.MiB,

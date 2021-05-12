@@ -24,6 +24,5 @@ require (
 	golang.org/x/image v0.0.0-20210504121937-7319ad40d33e // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/text v0.3.7-0.20210503195748-5c7c50ebbd4f // indirect
-	gonum.org/v1/netlib v0.0.0-20210302091547-ede94419cf37 // indirect
 	gonum.org/v1/plot v0.9.0
 )
