@@ -68,7 +68,7 @@ func main() {
 		} else {
 			dbdir = filepath.Join(*dirflag, "testdb-"+name)
 		}
-		if err := os.MkdirAll(dbdir, 0755); err != nil {
+		if err := os.MkdirAll(dbdir, 0o755); err != nil {
 			log.Fatal("can't create log dir: %v", err)
 		}
 		if err := runTest(*logdirflag, dbdir, name, cfg); err != nil {
