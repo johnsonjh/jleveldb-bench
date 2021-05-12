@@ -184,7 +184,6 @@ func (b batchWrite) Benchmark(dir string, env *bench.WriteEnv) error {
 		return err
 	}
 	defer db.Close()
-
 	batch := new(leveldb.Batch)
 	bsize := 0
 	return env.Run(func(key, value string, lastCall bool) error {
