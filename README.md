@@ -20,5 +20,3 @@
 * Databases are left on disk for inspection. You can remove them using:
 
   * `rm -r jtestdb-*`
-
-
