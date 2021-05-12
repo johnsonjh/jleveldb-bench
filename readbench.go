@@ -61,7 +61,6 @@ func (env *ReadEnv) Run(write func(key, value string, lastCall bool) error, read
 
 	var (
 		err      error
-		written  = uint64(0)
 		keypool  [][]byte
 		wg       sync.WaitGroup
 		result   = make(chan [][]byte, 100)
@@ -198,9 +197,9 @@ func (env *ReadEnv) logPercentage() {
 		return
 	}
 	pct := int((float64(env.read) / float64(env.cfg.Size)) * 100)
-	if pct > env.lastReadPercent {
+	if pct > env.lastPercent {
 		fmt.Printf("[Reading] %3d%%  %s\n", pct, env.cfg.TestName)
-		env.lastReadPercent = pct
+		env.lastPercent = pct
 	}
 }
 
