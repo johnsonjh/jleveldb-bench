@@ -4,7 +4,7 @@
 
 ## Installation
 
-* `go install -v ./...`
+* `go install -a -v ./...`
 
 ## Operation
 
