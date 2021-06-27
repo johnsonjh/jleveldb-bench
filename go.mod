@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/aristanetworks/goarista v0.0.0-20210611172335-102bb4c19812
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
-	github.com/johnsonjh/jleveldb v0.0.0-20210626192446-244c5422cdaa
+	github.com/johnsonjh/jleveldb v0.0.0-20210627023836-bafbd6a39374
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	gonum.org/v1/plot v0.9.1-0.20210624054750-bd0e370cab41
 	github.com/ajstarks/svgo v0.0.0-20210406150507-75cfd577ce75
