@@ -212,8 +212,8 @@ github.com/jcmturner/goidentity/v6 v6.0.1/go.mod h1:X1YW3bgtvwAXju7V3LCIMpY0Gbxy
 github.com/jcmturner/gokrb5/v8 v8.4.2/go.mod h1:sb+Xq/fTY5yktf/VxLsE3wlfPqQjp0aWNYyvBVK62bc=
 github.com/jcmturner/rpc/v2 v2.0.3/go.mod h1:VUJYCIDm3PVOEHw8sgt091/20OJjskO/YJki3ELg/Hc=
 github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af/go.mod h1:Nht3zPeWKUH0NzdCt2Blrr5ys8VGpn0CEB0cQHVjt7k=
-github.com/johnsonjh/jleveldb v0.0.0-20210701141223-38f06a829cfe h1:H8G86wkH6rr8lZ1Ojf/m6Oj3c4ckXVrKzhg6GZDpDCs=
-github.com/johnsonjh/jleveldb v0.0.0-20210701141223-38f06a829cfe/go.mod h1:wocK+BiJpmKdmuPa9UH9rLhawrmzWLOuAvmv3axaMAI=
+github.com/johnsonjh/jleveldb v0.0.0-20210702040017-b2eb6edf51e5 h1:G7p6TYu/wfi19njjQg+I0JT6HiDyOWWgIzQfLKgXLw4=
+github.com/johnsonjh/jleveldb v0.0.0-20210702040017-b2eb6edf51e5/go.mod h1:X9pcdaOoIh3BW0lXqfnxwL+QC32CGZU/vLxrHMB24HA=
 github.com/johnsonjh/leaktestfe v0.0.0-20210629212503-a92ef2d4610c h1:ApnRZsq3UXAZgCJYVJoEewBVqxdxe5sX1PtGbD8VPlU=
 github.com/johnsonjh/leaktestfe v0.0.0-20210629212503-a92ef2d4610c/go.mod h1:glmn3kd9uKq4RX6zOiBGxAC7Ru594q5kguoxZGfdcFM=
 github.com/jonboulle/clockwork v0.1.0/go.mod h1:Ii8DK3G1RaLaWxj9trq07+26W01tbo22gdxWY5EU2bo=

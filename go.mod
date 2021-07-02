@@ -18,7 +18,7 @@ require (
 	github.com/gonum/lapack v0.0.0-20181123203213-e4cdc5a0bff9
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
-	github.com/johnsonjh/jleveldb v0.0.0-20210701141223-38f06a829cfe
+	github.com/johnsonjh/jleveldb v0.0.0-20210702040017-b2eb6edf51e5
 	github.com/johnsonjh/leaktestfe v0.0.0-20210629212503-a92ef2d4610c
 	go.uber.org/goleak v1.1.11-0.20210525221708-d36f3aede898
 	golang.org/x/image v0.0.0-20210628002857-a66eb6448b8d
