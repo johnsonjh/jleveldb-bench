@@ -3,9 +3,9 @@ module github.com/johnsonjh/jleveldb-bench
 go 1.17
 
 require (
-	github.com/aristanetworks/goarista v0.0.0-20210712234141-8e3c58c9a7c4
+	github.com/aristanetworks/goarista v0.0.0-20210715113802-a1396632fc37
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
-	github.com/johnsonjh/jleveldb v0.0.0-20210714033633-fbbb5dfc56a9
+	github.com/johnsonjh/jleveldb v0.0.0-20210725071015-938a27ba2915
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	gonum.org/v1/plot v0.9.1-0.20210701112943-b2d20273166c
 )
@@ -24,7 +24,7 @@ require (
 	github.com/gonum/internal v0.0.0-20181124074243-f884aa714029 // indirect
 	github.com/gonum/lapack v0.0.0-20181123203213-e4cdc5a0bff9 // indirect
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9 // indirect
-	github.com/johnsonjh/leaktestfe v0.0.0-20210714000312-fb9839513ad6 // indirect
+	github.com/johnsonjh/leaktestfe v0.0.0-20210725032240-eaa86b37fd00 // indirect
 	go.uber.org/goleak v1.1.11-0.20210525221708-d36f3aede898 // indirect
 	golang.org/x/image v0.0.0-20210628002857-a66eb6448b8d // indirect
 	golang.org/x/text v0.3.7-0.20210524175448-3115f89c4b99 // indirect
