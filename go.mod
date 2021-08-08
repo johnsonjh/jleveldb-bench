@@ -5,9 +5,9 @@ go 1.17
 require (
 	github.com/aristanetworks/goarista v0.0.0-20210715113802-a1396632fc37
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
-	github.com/johnsonjh/jleveldb v0.0.0-20210729082240-b1f1ae302195
+	github.com/johnsonjh/jleveldb v0.0.0-20210807060143-4c8c7aaf5eef
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	gonum.org/v1/plot v0.9.1-0.20210701112943-b2d20273166c
+	gonum.org/v1/plot v0.9.1-0.20210804122424-5291cf61325e
 )
 
 require (
@@ -28,4 +28,5 @@ require (
 	go.uber.org/goleak v1.1.11-0.20210525221708-d36f3aede898 // indirect
 	golang.org/x/image v0.0.0-20210628002857-a66eb6448b8d // indirect
 	golang.org/x/text v0.3.7-0.20210524175448-3115f89c4b99 // indirect
+	golang.org/x/tools v0.1.6-0.20210806193852-d529aec52f04 // indirect
 )
