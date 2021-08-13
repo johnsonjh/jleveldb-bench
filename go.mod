@@ -7,7 +7,7 @@ require (
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
 	github.com/johnsonjh/jleveldb v0.0.0-20210807060143-4c8c7aaf5eef
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	gonum.org/v1/plot v0.9.1-0.20210804122424-5291cf61325e
+	gonum.org/v1/plot v0.9.1-0.20210808134851-25f6989b7a31
 )
 
 require (
@@ -25,8 +25,9 @@ require (
 	github.com/gonum/lapack v0.0.0-20181123203213-e4cdc5a0bff9 // indirect
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9 // indirect
 	github.com/johnsonjh/leaktestfe v0.0.0-20210729072946-c65fb1faa282 // indirect
-	go.uber.org/goleak v1.1.11-0.20210525221708-d36f3aede898 // indirect
+	go.uber.org/goleak v1.1.11-0.20210813005559-691160354723 // indirect
 	golang.org/x/image v0.0.0-20210628002857-a66eb6448b8d // indirect
-	golang.org/x/text v0.3.7-0.20210524175448-3115f89c4b99 // indirect
-	golang.org/x/tools v0.1.6-0.20210806193852-d529aec52f04 // indirect
+	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/tools v0.1.6-0.20210813165731-45389f592fe9 // indirect
+	rsc.io/pdf v0.1.2-0.20180525050209-c47d69cf462f // indirect
 )
