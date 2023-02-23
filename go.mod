@@ -6,7 +6,7 @@ require (
 	github.com/aristanetworks/goarista v0.0.0-20210715113802-a1396632fc37
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
 	github.com/johnsonjh/jleveldb v0.0.0-20210813221124-63022acb271c
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
 	gonum.org/v1/plot v0.9.1-0.20210808134851-25f6989b7a31
 )
 
@@ -24,10 +24,8 @@ require (
 	github.com/gonum/internal v0.0.0-20181124074243-f884aa714029 // indirect
 	github.com/gonum/lapack v0.0.0-20181123203213-e4cdc5a0bff9 // indirect
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9 // indirect
-	github.com/johnsonjh/leaktestfe v0.0.0-20210729072946-c65fb1faa282 // indirect
-	go.uber.org/goleak v1.1.11-0.20210813005559-691160354723 // indirect
 	golang.org/x/image v0.0.0-20210628002857-a66eb6448b8d // indirect
-	golang.org/x/text v0.3.7 // indirect
-	golang.org/x/tools v0.1.6-0.20210813165731-45389f592fe9 // indirect
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
+	golang.org/x/text v0.3.8 // indirect
 	rsc.io/pdf v0.1.2-0.20180525050209-c47d69cf462f // indirect
 )
