@@ -3,10 +3,10 @@ module github.com/johnsonjh/jleveldb-bench
 go 1.17
 
 require (
-	github.com/aristanetworks/goarista v0.0.0-20210715113802-a1396632fc37
+	github.com/aristanetworks/goarista v0.0.0-20230302142210-6112fea8c7e0
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
 	github.com/johnsonjh/jleveldb v0.0.0-20210813221124-63022acb271c
-	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
+	golang.org/x/sync v0.1.0
 	gonum.org/v1/plot v0.9.1-0.20210808134851-25f6989b7a31
 )
 
