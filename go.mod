@@ -1,13 +1,14 @@
 module github.com/johnsonjh/jleveldb-bench
 
-go 1.22.0
+go 1.23.0
+
 toolchain go1.23.7
 
 require (
 	github.com/aristanetworks/goarista v0.0.0-20241115153057-bd75d7f26a44
 	github.com/gonum/stat v0.0.0-20181125101827-41a0da705a5b
 	github.com/johnsonjh/jleveldb v0.0.0-20241220124748-f83aa995f7fd
-	golang.org/x/sync v0.11.0
+	golang.org/x/sync v0.12.0
 	gonum.org/v1/plot v0.9.1-0.20210808134851-25f6989b7a31
 )
 
@@ -27,9 +28,9 @@ require (
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9 // indirect
 	github.com/hpcloud/tail v1.0.0 // indirect
 	golang.org/x/image v0.23.0 // indirect
-	golang.org/x/net v0.36.0 // indirect
-	golang.org/x/sys v0.30.0 // indirect
-	golang.org/x/text v0.22.0 // indirect
+	golang.org/x/net v0.38.0 // indirect
+	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/text v0.23.0 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	rsc.io/pdf v0.1.2-0.20180525050209-c47d69cf462f // indirect
 )
