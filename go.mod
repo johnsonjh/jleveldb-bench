@@ -26,9 +26,9 @@ require (
 	github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9 // indirect
 	github.com/hpcloud/tail v1.0.0 // indirect
 	golang.org/x/image v0.38.0 // indirect
-	golang.org/x/net v0.38.0 // indirect
-	golang.org/x/sys v0.31.0 // indirect
-	golang.org/x/text v0.35.0 // indirect
+	golang.org/x/net v0.55.0 // indirect
+	golang.org/x/sys v0.45.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	rsc.io/pdf v0.1.2-0.20180525050209-c47d69cf462f // indirect
 )
